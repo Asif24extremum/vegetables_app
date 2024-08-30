@@ -52,6 +52,7 @@ tornado==6.4.1
 trio==0.26.0
 trio-websocket==0.11.1
 tzdata==2024.1
+typing-extensions==4.9.0  # Added to ensure compatibility
 urllib3==2.2.2
 watchdog==4.0.2
 webdriver-manager==4.0.1
