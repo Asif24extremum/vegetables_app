@@ -1,60 +1,43 @@
+# Data processing libraries
+pandas==2.1.0
+numpy==1.25.2
+
+# Visualization libraries
+matplotlib==3.8.0
+seaborn==0.12.2
 altair==5.4.1
-attrs==23.2.0
-beautifulsoup4==4.12.3
-blinker==1.8.2
-cachetools==5.5.0
-certifi==2024.7.4
-cffi==1.16.0
-charset-normalizer==3.3.2
-click==8.1.7
-colorama==0.4.6
-et-xmlfile==1.1.0
-gitdb==4.0.11
-GitPython==3.1.43
-h11==0.14.0
-idna==3.7
-Jinja2==3.1.4
-jsonschema==4.23.0
-jsonschema-specifications==2023.12.1
-markdown-it-py==3.0.0
-MarkupSafe==2.1.5
-mdurl==0.1.2
-narwhals==1.5.5
-numpy==2.0.1
-openpyxl==3.1.5
-outcome==1.3.0.post0
-packaging==24.1
-pandas==2.2.2
-pillow==10.4.0
-protobuf==5.27.3
-pyarrow==17.0.0
-pycparser==2.22
-pydeck==0.9.1
-Pygments==2.18.0
-PySocks==1.7.1
-python-dateutil==2.9.0.post0
-python-dotenv==1.0.1
-pytz==2024.1
-referencing==0.35.1
-requests==2.32.3
-rich==13.8.0
-rpds-py==0.20.0
-selenium==4.23.0
-six==1.16.0
-smmap==5.0.1
-sniffio==1.3.1
-sortedcontainers==2.4.0
-soupsieve==2.5
-streamlit==1.37.1
-tenacity==8.5.0
-toml==0.10.2
-tornado==6.4.1
-trio==0.26.0
-trio-websocket==0.11.1
-tzdata==2024.1
-typing-extensions==4.9.0  # Added to ensure compatibility
-urllib3==2.2.2
-watchdog==4.0.2
-webdriver-manager==4.0.1
-websocket-client==1.8.0
-wsproto==1.2.0
+
+# Web framework and visualization tools
+streamlit==1.25.0
+
+# Machine learning libraries
+scikit-learn==1.3.0
+xgboost==1.7.6
+
+# Deep learning libraries
+tensorflow==2.14.0
+torch==2.0.1
+
+# Natural Language Processing
+nltk==3.8.1
+spacy==3.6.0
+
+# Database connectors
+SQLAlchemy==2.1.0
+psycopg2==2.9.8
+
+# API handling
+requests==2.31.0
+flask==2.3.2
+
+# Utility libraries
+typing-extensions>=4.10.0
+pydantic==2.0.3
+python-dotenv==1.0.0
+
+# Testing libraries
+pytest==7.4.0
+
+# Miscellaneous
+beautifulsoup4==4.12.2
+lxml==4.9.3
