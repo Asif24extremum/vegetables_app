@@ -1,3 +1,5 @@
+# Adjusted requirements.txt to resolve dependency conflicts
+
 # Data processing libraries
 pandas==2.1.0
 numpy==1.25.2
@@ -31,7 +33,7 @@ requests==2.31.0
 flask==2.3.2
 
 # Utility libraries
-typing-extensions>=4.10.0
+typing-extensions>=4.10.0  # Updated to resolve conflict
 pydantic==2.0.3
 python-dotenv==1.0.0
 
@@ -41,3 +43,7 @@ pytest==7.4.0
 # Miscellaneous
 beautifulsoup4==4.12.2
 lxml==4.9.3
+
+# WebSocket and HTTP/2 libraries
+websocket-client==1.8.0
+wsproto==1.2.0
