@@ -1,50 +1,48 @@
 # Data processing libraries
-pandas==2.0.3
-numpy==1.25.2
+pandas
+numpy
 
 # Visualization libraries
-matplotlib==3.8.0
-seaborn==0.12.2
-altair==5.4.1
+matplotlib
+seaborn
+altair
 
 # Web framework and visualization tools
-streamlit==1.25.0
+streamlit
 
 # Machine learning libraries
-scikit-learn==1.3.0
-xgboost==1.7.6
+scikit-learn
+xgboost
 
 # Deep learning libraries
 tensorflow # Changed to a more stable version
 torch
 
 # Natural Language Processing
-nltk==3.8.1
-spacy==3.6.0
+nltk
+spacy
 
 # Database connectors
-SQLAlchemy==2.1.0
-psycopg2==2.9.8
+SQLAlchemy
+psycopg2
 
-# API handling
-requests==2.31.0
-flask==2.3.2
+
 
 # Utility libraries
-typing-extensions==4.10.0
+typing-extensions
 pydantic
-python-dotenv==1.0.0
+python-dotenv
 
 # Testing libraries
-pytest==7.4.0
+pytest
 
 # Miscellaneous
-beautifulsoup4==4.12.2
-lxml==4.9.3
+beautifulsoup4
+lxml
 
 # WebSocket and HTTP/2 libraries
-websocket-client==1.8.0
-wsproto==1.2.0
+websocket-client
+wsproto
 
 setuptools>=59.5.0  
 distutils
