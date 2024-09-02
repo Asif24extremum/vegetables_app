@@ -15,7 +15,7 @@ scikit-learn
 xgboost
 
 # Deep learning libraries
-tensorflow # Changed to a more stable version
+tensorflow
 torch
 
 # Natural Language Processing
@@ -24,9 +24,7 @@ spacy
 
 # Database connectors
 SQLAlchemy
-psycopg2
-
-
+psycopg2-binary
 
 # Utility libraries
 typing-extensions
@@ -44,6 +42,6 @@ lxml
 websocket-client
 wsproto
 
-setuptools>=59.5.0  
-distutils
-
+# Build tools
+setuptools>=59.5.0
+wheel
