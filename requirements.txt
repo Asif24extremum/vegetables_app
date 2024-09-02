@@ -37,6 +37,7 @@ pytest
 # Miscellaneous
 beautifulsoup4
 lxml
+selenium
 
 # WebSocket and HTTP/2 libraries
 websocket-client
