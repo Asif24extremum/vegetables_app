@@ -2,29 +2,11 @@
 pandas
 numpy
 
-# Visualization libraries
-matplotlib
-seaborn
-altair
-
 # Web framework and visualization tools
 streamlit
 
-# Machine learning libraries
-scikit-learn
-xgboost
 
-# Deep learning libraries
-tensorflow
-torch
 
-# Natural Language Processing
-nltk
-spacy
-
-# Database connectors
-SQLAlchemy
-psycopg2-binary
 
 # Utility libraries
 typing-extensions
@@ -35,10 +17,9 @@ python-dotenv
 pytest
 openpyxl
 
-# Miscellaneous
-beautifulsoup4
-lxml
-selenium
+#selenium
+
+selenium==3.14.0
 
 # WebSocket and HTTP/2 libraries
 websocket-client
