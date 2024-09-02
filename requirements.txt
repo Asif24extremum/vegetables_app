@@ -33,6 +33,7 @@ python-dotenv
 
 # Testing libraries
 pytest
+openpyxl
 
 # Miscellaneous
 beautifulsoup4
