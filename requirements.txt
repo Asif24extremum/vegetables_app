@@ -16,7 +16,7 @@ xgboost==1.7.6
 
 # Deep learning libraries
 tensorflow # Changed to a more stable version
-torch==2.0.1
+torch
 
 # Natural Language Processing
 nltk==3.8.1
