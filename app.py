@@ -575,12 +575,14 @@ def main(selected_websites, search_terms):
     # Initialize WebDriver
     st.write("Initializing WebDriver...")
     # driver = webdriver.Chrome()
+    # Initialize WebDriver with executable_path and Options
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--window-size=1920,1200')
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
-                                  options=options)
+
+    # Use ChromeDriverManager to download and use the correct version of ChromeDriver
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
     
     try:
         # Dictionary to store data from selected websites
