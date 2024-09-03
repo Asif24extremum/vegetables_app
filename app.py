@@ -574,7 +574,8 @@ def main(selected_websites, search_terms):
     # Clear previous data
     clear_previous_data()
 
-    chromium_path = shutil.which("chromium-browser")
+    # Find the path to the Chromium binary
+    chromium_path = shutil.which("chromium")
     
     options = Options()
     options.binary_location = chromium_path
