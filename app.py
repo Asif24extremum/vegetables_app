@@ -576,13 +576,19 @@ def main(selected_websites, search_terms):
     st.write("Initializing WebDriver...")
     # driver = webdriver.Chrome()
     # Initialize WebDriver with executable_path and Options
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
+    # Set up Chrome options
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')  # Run in headless mode
+    chrome_options.add_argument('--disable-gpu')  # Disable GPU (important for headless)
+    chrome_options.add_argument('--no-sandbox')  # Bypass OS security model, required when running as root
+    chrome_options.add_argument('--disable-dev-shm-usage')  # Overcome limited resource problems
+    chrome_options.add_argument('--window-size=1920,1200')  # Set window size
 
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+    # Initialize ChromeDriver service
+    service = Service(ChromeDriverManager().install())
+
+    # Initialize WebDriver with the service and options
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     # Use ChromeDriverManager to download and use the correct version of ChromeDriver
     # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
