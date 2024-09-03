@@ -18,5 +18,6 @@ libx11-xcb1
 libxcb1
 libx11-6
 libxkbcommon0
-google-chrome-stable
+chromium-browser
+
 
