@@ -382,7 +382,6 @@ def scrape_dmart(driver, search_terms):
         print(f"An error occurred: {e}")
         return pd.DataFrame(), None
 
-
 def scrape_hyperpure(driver, search_terms):
     if st.session_state.stop_scraping:
         return pd.DataFrame()
