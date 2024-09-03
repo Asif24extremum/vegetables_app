@@ -566,7 +566,6 @@ def scrape_jiomart(driver, search_terms):
 
 
 def main(selected_websites, search_terms):
-    driver = None
     # Initialize stop_scraping flag
     st.session_state.stop_scraping = False
 
@@ -574,15 +573,18 @@ def main(selected_websites, search_terms):
     clear_previous_data()
 
     # Initialize WebDriver
-    st.write("Initializing WebDriver...")
-    # driver = webdriver.Chrome()
-    # Initialize WebDriver with executable_path and Options
-    options = webdriver.ChromeOptions()
+    options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--window-size=1920,1200')
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
-                                  options=options)
+
+    # Use the exact path provided in the error log
+    service = Service('/home/appuser/.wdm/drivers/chromedriver/linux64/114.0.5735.90/chromedriver')
+
+    # Initialize WebDriver with the specified service and options
+    driver = webdriver.Chrome(service=service, options=options)
 
     # Use ChromeDriverManager to download and use the correct version of ChromeDriver
     # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
