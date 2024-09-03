@@ -661,7 +661,10 @@ def main(selected_websites, search_terms):
     if st.session_state.download_files:
         st.write("Download available files:")
         for website, file_path in st.session_state.download_files.items():
-            if os.path.exists(file_path):
+            # Debugging: Check the file_path value
+            st.write(f"File path for {website}: {file_path}")
+
+            if file_path is not None and os.path.exists(file_path):
                 try:
                     with open(file_path, 'rb') as f:
                         st.download_button(
@@ -675,6 +678,7 @@ def main(selected_websites, search_terms):
                     st.error(f"An error occurred while trying to download the file for {website}: {e}")
             else:
                 st.error(f"File {file_path} not found for {website}. Please ensure the data was scraped correctly.")
+
 
 # Streamlit UI
 st.title("Web Scraper")
@@ -712,7 +716,7 @@ if uploaded_file is not None:
     if st.session_state.download_files:
         st.write("Download available files:")
         for website, file_path in st.session_state.download_files.items():
-            if os.path.exists(file_path):
+            if file_path is not None and os.path.exists(file_path):
                 try:
                     with open(file_path, 'rb') as f:
                         st.download_button(
@@ -728,4 +732,5 @@ if uploaded_file is not None:
                 st.error(f"File {file_path} not found for {website}. Please ensure the data was scraped correctly.")
 else:
     st.warning("Please upload the Master_List.xlsx file to proceed.")
+
 
