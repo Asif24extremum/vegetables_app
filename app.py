@@ -569,6 +569,8 @@ def scrape_jiomart(driver, search_terms):
 
 # Main function
 def main(selected_websites, search_terms):
+    # Record start time
+    start_time = time.time()
     # Initialize stop_scraping flag
     st.session_state.stop_scraping = False
 
@@ -656,7 +658,15 @@ def main(selected_websites, search_terms):
         # Close the WebDriver
         st.write("Closing WebDriver...")
         driver.quit()
+    
+    # Record end time
+    end_time = time.time()
 
+    # Calculate and display the total execution time
+    total_time = end_time - start_time
+    st.write(f"Total execution time: {total_time:.2f} seconds")
+    
+    
     # Display download buttons for all available files
     if st.session_state.download_files:
         st.write("Download available files:")
