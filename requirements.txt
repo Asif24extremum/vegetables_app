@@ -18,7 +18,7 @@ pytest
 openpyxl
 
 #selenium
-beautifulsoup4
+beautifulsoup4==4.12.3
 selenium==4.21.0
 webdriver-manager==4.0.2
 
