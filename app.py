@@ -581,8 +581,8 @@ def main(selected_websites, search_terms):
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--window-size=1920,1200')
 
-    # Use the exact path provided in the error log
-    service = Service('/home/appuser/.wdm/drivers/chromedriver/linux64/114.0.5735.90/chromedriver')
+    # Use webdriver-manager to manage ChromeDriver
+    service = Service(ChromeDriverManager().install())
 
     # Initialize WebDriver with the specified service and options
     driver = webdriver.Chrome(service=service, options=options)
