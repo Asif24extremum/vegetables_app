@@ -19,6 +19,7 @@ from selenium.common.exceptions import (
 )
 from bs4 import BeautifulSoup
 from openpyxl import load_workbook
+import shutil
 
 # Define the folder where all data will be saved
 output_folder = 'scraped_data'
@@ -574,7 +575,11 @@ def main(selected_websites, search_terms):
     clear_previous_data()
 
     # Initialize WebDriver
+    # Find the path to the Chrome binary
+    chrome_path = shutil.which("google-chrome-stable")
+    
     options = Options()
+    options.binary_location = chrome_path
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
