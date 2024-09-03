@@ -574,12 +574,10 @@ def main(selected_websites, search_terms):
     # Clear previous data
     clear_previous_data()
 
-    # Initialize WebDriver
-    # Find the path to the Chrome binary
-    chrome_path = shutil.which("google-chrome-stable")
+    chromium_path = shutil.which("chromium-browser")
     
     options = Options()
-    options.binary_location = chrome_path
+    options.binary_location = chromium_path
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
