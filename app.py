@@ -574,7 +574,6 @@ def main(selected_websites, search_terms):
     # Clear previous data
     clear_previous_data()
 
-    # Find the path to the Chromium binary
     chromium_path = shutil.which("chromium")
     
     options = Options()
@@ -585,9 +584,9 @@ def main(selected_websites, search_terms):
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--window-size=1920,1200')
 
-    # Manually specify the version of ChromeDriver
+    # Specify the correct version of ChromeDriver
     chrome_driver_version = '120.0.6099.224'  # Adjust this to match your Chromium version
-    service = Service(ChromeDriverManager(version=chrome_driver_version).install())
+    service = Service(ChromeDriverManager(driver_version=chrome_driver_version).install())
 
     # Initialize WebDriver with the specified service and options
     driver = webdriver.Chrome(service=service, options=options)
