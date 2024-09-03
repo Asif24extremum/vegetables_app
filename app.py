@@ -578,7 +578,7 @@ def main(selected_websites, search_terms):
     
     options = Options()
     options.binary_location = chromium_path
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
