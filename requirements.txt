@@ -27,5 +27,6 @@ websocket-client
 wsproto
 
 # Build tools
-setuptools>=59.5.0
-wheel
+setuptools==70.0.0
+wheel==0.43.0
+
