@@ -585,8 +585,9 @@ def main(selected_websites, search_terms):
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--window-size=1920,1200')
 
-    # Use webdriver-manager to manage ChromeDriver
-    service = Service(ChromeDriverManager().install())
+    # Manually specify the version of ChromeDriver
+    chrome_driver_version = '120.0.6099.224'  # Adjust this to match your Chromium version
+    service = Service(ChromeDriverManager(version=chrome_driver_version).install())
 
     # Initialize WebDriver with the specified service and options
     driver = webdriver.Chrome(service=service, options=options)
