@@ -566,6 +566,7 @@ def scrape_jiomart(driver, search_terms):
 
 
 def main(selected_websites, search_terms):
+    driver = None
     # Initialize stop_scraping flag
     st.session_state.stop_scraping = False
 
