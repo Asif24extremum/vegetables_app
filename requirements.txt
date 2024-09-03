@@ -19,7 +19,8 @@ openpyxl
 
 #selenium
 beautifulsoup4
-selenium==3.14.0
+selenium>=4.0.0
+webdriver-manager
 
 # WebSocket and HTTP/2 libraries
 websocket-client
@@ -28,4 +29,3 @@ wsproto
 # Build tools
 setuptools>=59.5.0
 wheel
-webdriver-manager
