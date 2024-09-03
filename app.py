@@ -567,6 +567,7 @@ def scrape_jiomart(driver, search_terms):
         return pd.DataFrame(), None
 
 
+# Main function
 def main(selected_websites, search_terms):
     # Initialize stop_scraping flag
     st.session_state.stop_scraping = False
@@ -590,9 +591,6 @@ def main(selected_websites, search_terms):
 
     # Initialize WebDriver with the specified service and options
     driver = webdriver.Chrome(service=service, options=options)
-
-    # Use ChromeDriverManager to download and use the correct version of ChromeDriver
-    # driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
     
     try:
         # Dictionary to store data from selected websites
@@ -663,15 +661,20 @@ def main(selected_websites, search_terms):
     if st.session_state.download_files:
         st.write("Download available files:")
         for website, file_path in st.session_state.download_files.items():
-            with open(file_path, 'rb') as f:
-                st.download_button(
-                    label=f"Download {website} Data",
-                    data=f,
-                    file_name=f'{website}_data.xlsx',
-                    mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    key=f'{website}_download_button_post_scrape_{website}'
-                )
-
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, 'rb') as f:
+                        st.download_button(
+                            label=f"Download {website} Data",
+                            data=f,
+                            file_name=f'{website}_data.xlsx',
+                            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                            key=f'{website}_download_button_post_scrape_{website}'
+                        )
+                except Exception as e:
+                    st.error(f"An error occurred while trying to download the file for {website}: {e}")
+            else:
+                st.error(f"File {file_path} not found for {website}. Please ensure the data was scraped correctly.")
 
 # Streamlit UI
 st.title("Web Scraper")
@@ -709,15 +712,20 @@ if uploaded_file is not None:
     if st.session_state.download_files:
         st.write("Download available files:")
         for website, file_path in st.session_state.download_files.items():
-            with open(file_path, 'rb') as f:
-                # Ensure unique keys by appending the website name to the key
-                st.download_button(
-                    label=f"Download {website} Data",
-                    data=f,
-                    file_name=f'{website}_data.xlsx',
-                    mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    key=f'{website}_download_button_{website}_{int(time.time())}'
-                )
-
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, 'rb') as f:
+                        st.download_button(
+                            label=f"Download {website} Data",
+                            data=f,
+                            file_name=f'{website}_data.xlsx',
+                            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                            key=f'{website}_download_button_{website}_{int(time.time())}'
+                        )
+                except Exception as e:
+                    st.error(f"An error occurred while trying to download the file for {website}: {e}")
+            else:
+                st.error(f"File {file_path} not found for {website}. Please ensure the data was scraped correctly.")
 else:
     st.warning("Please upload the Master_List.xlsx file to proceed.")
+
