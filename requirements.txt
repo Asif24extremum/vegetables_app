@@ -18,7 +18,7 @@ pytest
 openpyxl
 
 #selenium
-
+beautifulsoup4
 selenium==3.14.0
 
 # WebSocket and HTTP/2 libraries
